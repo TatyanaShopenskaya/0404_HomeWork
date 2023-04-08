@@ -66,19 +66,6 @@ def remote_data():           #функция удаления данных
 #remote()
 
 
-
-# def del_person():
-# del_name = input('Введите данные контакта, который хотите изменить: ')
-# with open('C:\\Users\\nastyaduko\\Documents\\GeekBrains\\Testing\\Python\\Seminars\\Les_8_dop\\phonebook.txt', 'r', encoding='utf-8') as data:
-# d = data.readlines()
-# for i_line in range(len(d)):
-# if del_name in d[i_line]:
-# del d[i_line]
-# with open('C:\\Users\\nastyaduko\\Documents\\GeekBrains\\Testing\\Python\\Seminars\\Les_8_dop\\phonebook.txt', 'w', encoding='utf-8') as data:
-# print(d)
-# for line in d:
-# data.write(line)
-
 def change_data():
      change_name = input('Введите данные контакта, который хотите изменить - ')
      last_name = input('Введите новую фамилию - ')
