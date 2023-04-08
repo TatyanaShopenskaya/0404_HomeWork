@@ -16,21 +16,21 @@ def add_person():    #функция добавления данных поль�
     name = input('Введите имя - ')          #Иван
     surname = input('Введите отчество - ')  #Иванович
     phone = input('Введите телефон - ')     #89102582525
-    data = open('HomePython_1703\\Files\\phonebook.txt', 'a', encoding='utf-8')        #encoding='utf-8' - для декодирования русских слов
+    data = open('HomePython_1703\\phonebook.txt', 'a', encoding='utf-8')        #encoding='utf-8' - для декодирования русских слов
     data.writelines([lastname + ' ', name + ' ',surname+' ',phone, '\n'])
     data.close()   #закрыли файл
 #add_person()
 
 
 def print_data():    #функция вывода данных на экран
-    with open('HomePython_1703\\Files\\phonebook.txt', 'r', encoding='utf-8') as data:
+    with open('HomePython_1703\\phonebook.txt', 'r', encoding='utf-8') as data:  
               print(data.read())
 #print_data()
 
 
 def search():        #функция поиска
       search_name = input('Введите данные для поиска - ')
-      with open('HomePython_1703\\Files\\phonebook.txt', 'r', encoding='utf-8') as data:
+      with open('HomePython_1703\\phonebook.txt', 'r', encoding='utf-8') as data:
             for line in data:
                   if search_name in line:
                         print(line)
@@ -38,7 +38,7 @@ def search():        #функция поиска
 
 
 def load_data():       #функция загрузки данных из другого файла(из new_data.txt)
-      with open('HomePython_1703\\Files\\phonebook.txt', 'r+', encoding='utf-8') as data:
+      with open('HomePython_1703\\phonebook.txt', 'r+', encoding='utf-8') as data:
             text_data = data.read()
             path = input('Введите адрес файла - ')
             with open(path, 'r', encoding='utf-8') as data_2:
@@ -55,12 +55,12 @@ def load_data():       #функция загрузки данных из дру
 
 def remote_data():           #функция удаления данных
      remote_name = input('Введите данные для удаления - ')
-     with open('HomePython_1703\\Files\\phonebook.txt', 'r', encoding='utf-8') as data:
+     with open('HomePython_1703\\phonebook.txt', 'r', encoding='utf-8') as data:
         arr = data.readlines()     #записываем в переменную arr список строк
         for line in arr:
             if remote_name in line:
                 del arr[arr.index(line)]   #удаляем значение по индексу
-     with open('HomePython_1703\\Files\\phonebook.txt', 'w', encoding='utf-8') as data:
+     with open('HomePython_1703\\phonebook.txt', 'w', encoding='utf-8') as data:
         for line in arr:
             data.write(line)
 #remote()
@@ -73,13 +73,13 @@ def change_data():
      surname = input('Введите новое отчество - ')
      phone = input('Введите новый номер телефона - ')
 
-     with open('HomePython_1703\\Files\\phonebook.txt', 'r', encoding='utf-8') as data:
+     with open('HomePython_1703\\phonebook.txt', 'r', encoding='utf-8') as data:
           d = data.readlines()
      for i_line in range(len(d)):
           if change_name in d[i_line]:
                d[i_line] = last_name + ' '+name+' ' + surname + ' ' + phone
 
-     with open ('HomePython_1703\\Files\\phonebook.txt', 'w', encoding='utf-8') as data:
+     with open ('HomePython_1703\\phonebook.txt', 'w', encoding='utf-8') as data:
          for line in d:
               data.write(line) 
 #change_data()
@@ -126,11 +126,3 @@ def main():
 
 if __name__ == "__main__":
      main()
-
-
-              
-            
-
-      
-              
-
